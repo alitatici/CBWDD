@@ -3,6 +3,9 @@ Mask exact lat/lon coordinates by snapping them to hexagon bins of an
 arbitrary, exact size (in km), then replacing each point's coordinates
 with its hexagon's center.
 
+A custom pointy-top hex grid is built in a local projected (meter)
+coordinate system via pyproj, giving exact control over hex edge length.
+
 Workflow:
   1. Project lat/lon -> local meters (Azimuthal Equidistant centered on
      the data's centroid -- distortion-free near the center, fine for a

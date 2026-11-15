@@ -54,9 +54,6 @@ for index, row in df.iterrows():
     search_box.send_keys(search_term + Keys.RETURN)
     time.sleep(3)
 
-    """
-    need a correction. It should take deleted parcels.
-    """
     try:
         element = driver.find_element(By.CSS_SELECTOR, "[target='ParcelView']")
         element.click()

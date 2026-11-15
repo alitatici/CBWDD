@@ -79,8 +79,5 @@ def windSpeedJDone(df):
 
     # --- Attach to df ---
     df['wind_speed_interp'] = np.asarray(z_pred, dtype=float)
-    # If you enabled statistics, you can also store variance or std dev:
-    # df['wind_speed_ok_var'] = np.asarray(ss_pred, dtype=float)
-    # df['wind_speed_ok_std'] = np.sqrt(df['wind_speed_ok_var'])
 
     return df

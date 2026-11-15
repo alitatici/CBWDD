@@ -47,7 +47,7 @@ def datasetMatching():
         df_LCDA['match_code_LCPA'] = np.nan
         df_LCPA['match_code_LCPA'] = np.nan
 
-        ### ========== First Match: LCDA <-> LCPA ==========
+        # === Step 4: Find candidate LCDA-LCPA pairs within 30 m ===
         coords_LCDA_array = np.radians(df_LCDA[['Latitude', 'Longitude']].values)
         coords_LCPA_array = np.radians(df_LCPA[['Latitude', 'Longitude']].values)
 
@@ -65,6 +65,7 @@ def datasetMatching():
                 if dist <= 30:
                     candidates.append((i, j, dist))
 
+        # === Step 5: One-to-one matching, closest pairs first ===
         candidates.sort(key=lambda x: x[2])
         matched_LCDA = set()
         matched_LCPA = set()
